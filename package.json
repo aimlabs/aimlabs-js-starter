@@ -1,0 +1,18 @@
+{
+  "name": "aimlabs-js-starter",
+  "version": "1.0.4",
+  "description": "AIMLABS JavaScript starter project",
+  "main": "src/index.js",
+  "repository": "https://github.com/aimlabs/aimlabs-js-starter.git",
+  "author": "Suresh Reddy Guntaka",
+  "license": "MIT",
+  "private": false,
+"scripts": {
+    "start": "webpack --env=dev --config webpack.config.js"
+	},
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
