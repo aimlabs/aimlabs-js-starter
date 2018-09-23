@@ -1,5 +1,5 @@
-import * as events from './events';
-import {Utils} from './common';
+import events from './events';
+import {utils} from './common';
 
 let eventDispatcher = new events.EventBus();
 eventDispatcher.on("test", function (evt, evtData) {
@@ -11,14 +11,14 @@ eventDispatcher.fireEvent(evt, {});
 eventDispatcher.fireEvent(new events.Event("test", {testData : "Test"}), {});
 
 var e1 = new events.Event("Test", {});
-var e2 = Utils.clone(e1);
+var e2 = utils.clone(e1);
 
 console.log("Are they equal? " + (typeof e1 === typeof e2));
 console.log(e2 instanceof events.Event);
 console.log(e1 instanceof events.Event);
-console.log(Utils.getClassName(e1));
-console.log(Utils.getClassName(e2));
-console.log(Utils.getClassName(eventDispatcher));
+console.log(utils.getClassName(e1));
+console.log(utils.getClassName(e2));
+console.log(utils.getClassName(eventDispatcher));
 //e2.remove();
 //console.log (e1);
 //console.log (e2);

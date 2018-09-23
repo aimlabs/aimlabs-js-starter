@@ -3,6 +3,7 @@ import Event from './Event';
 /**
  * @classdesc Event Dispatcher
  * @memberOf module:events
+ * @extends BaseObject
  */
 class EventBus extends BaseObject {
 

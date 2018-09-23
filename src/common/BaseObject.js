@@ -1,6 +1,5 @@
 /**
  * @classdesc BaseObject is the root object for all the classes and will have common re-usable methods
- * @memberOf module:common
  */
 class BaseObject extends Object {
 

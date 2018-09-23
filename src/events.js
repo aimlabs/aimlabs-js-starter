@@ -1,5 +1,14 @@
 /**
  * @module events
  */
-export Event from "./events/Event";
-export EventBus from "./events/EventBus";
+import Event from "./events/Event";
+import EventBus from "./events/EventBus";
+
+const events  = {
+    Event : Event,
+    EventBus : EventBus
+};
+
+export default events;
+
+

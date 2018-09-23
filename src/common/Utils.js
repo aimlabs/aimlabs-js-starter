@@ -1,32 +1,53 @@
-import {clone, cloneDeep} from 'lodash';
 /**
- * @memberOf moduel:common
+ * @module utils
  */
-class Utils {
+import {clone as _clone, cloneDeep} from 'lodash';
 
-    static isIFrame = () => {
-        try {
-            return window.self !== window.top;
-        } catch (a) {
-            return false;
-        }
-    }
-
-    static isTouch = () => {
-        return 'ontouchstart' in window;
-    }
-
-    static clone = (source) => {
-        return clone(source);
-    }
-
-    static deepClone = (source) => {
-        return cloneDeep(source);
-    }
-
-    static getClassName = (obj) => {
-        return 'undefined' == typeof obj || null == obj ? obj : obj.constructor.toString().split(' ')[1].split('(')[0]
+/**
+ * @function
+ * @returns {boolean}
+ */
+export function isIFrame () {
+    try {
+        return window.self !== window.top;
+    } catch (a) {
+        return false;
     }
 }
 
-export default Utils;
+/**
+ * @function
+ * @returns {boolean}
+ */
+export function isTouch () {
+    return 'ontouchstart' in window;
+}
+
+/**
+ * @function
+ * @param {object} source
+ * @returns {object}
+ */
+export function clone (source) {
+    return _clone(source);
+}
+
+/**
+ * @function
+ * @param {object} source
+ * @returns {object}
+ */
+export function deepClone (source) {
+    return cloneDeep(source);
+}
+
+/**
+ * @function
+ * @param {object} obj
+ * @returns {string}
+ */
+export function getClassName (obj) {
+    return 'undefined' == typeof obj || null == obj ? obj : obj.constructor.toString().split(' ')[1].split('(')[0]
+}
+
+

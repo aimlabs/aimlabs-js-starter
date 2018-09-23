@@ -2,6 +2,7 @@ import {BaseObject} from '../common';
 /**
  * @classdesc Model representing Event
  * @memberOf module:events
+ * @extends BaseObject
  */
 class Event extends BaseObject {
 
