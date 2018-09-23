@@ -1,5 +1,6 @@
 /**
  * @module utils
+ * TODO: Documentation is pending
  */
 import {clone as _clone, cloneDeep} from 'lodash';
 
