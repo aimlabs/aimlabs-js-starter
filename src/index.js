@@ -1,5 +1,6 @@
 import events from './events';
 import {utils} from './common';
+import {axios} from 'axios';
 
 let eventDispatcher = new events.EventBus();
 eventDispatcher.on("test", function (evt, evtData) {
@@ -19,6 +20,9 @@ console.log(e1 instanceof events.Event);
 console.log(utils.getClassName(e1));
 console.log(utils.getClassName(e2));
 console.log(utils.getClassName(eventDispatcher));
+console.log(utils.getViewportDimensions(true));
+console.log(utils.getViewportDimensions(false));
+console.log(utils.getOrientation());
 //e2.remove();
 //console.log (e1);
 //console.log (e2);
