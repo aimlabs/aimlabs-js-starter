@@ -1,5 +1,7 @@
 import {clone, cloneDeep} from 'lodash';
-
+/**
+ * @memberOf moduel:common
+ */
 class Utils {
 
     static isIFrame = () => {
