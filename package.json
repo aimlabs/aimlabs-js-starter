@@ -1,6 +1,6 @@
 {
   "name": "aimlabs-js-starter",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "AIMLABS JavaScript starter project",
   "main": "src/index.js",
   "repository": "https://github.com/aimlabs/aimlabs-js-starter.git",
