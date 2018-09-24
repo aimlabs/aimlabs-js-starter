@@ -2,8 +2,7 @@
  * @module utils
  * TODO: Documentation is pending
  */
-import {clone as _clone} from 'lodash/clone';
-import {cloneDeep} from 'lodash/cloneDeep';
+import {clone as _clone, cloneDeep} from 'lodash/lang';
 
 /**
  * @function

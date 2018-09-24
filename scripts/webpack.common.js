@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 
@@ -15,7 +16,7 @@ module.exports = {
 
     output: {
         path: path.join(process.cwd(), 'build/dist'),
-        filename: '[name].[hash].js',
+        filename: 'js/[name].[hash].js',
         publicPath: '',
         sourceMapFilename: '[name].map'
     },
@@ -37,9 +38,23 @@ module.exports = {
                         "@babel/plugin-proposal-class-properties",
                         "@babel/plugin-proposal-export-default-from",
                         "@babel/plugin-proposal-export-namespace-from"
-        ]
+                    ]
                 }
             }
+        },{
+            test: /\.s?css$/,
+            use: [{
+                loader: 'style-loader'
+            },{
+                loader : MiniCssExtractPlugin.loader,
+                options : {sourceMap: true}
+            },{
+                loader: "css-loader",
+                options  : {sourceMap : true}
+            },{
+                loader : "sass-loader",
+                options  : {sourceMap : true}
+            }]
         }]
     },
     optimization: {},
@@ -53,6 +68,12 @@ module.exports = {
             transform : function (content, path) {
                 return content;
             }
+        }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "css/[name].[hash].css",
+            chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({template: path.join(process.cwd() + '/public/index.html')})
     ]

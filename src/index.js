@@ -1,6 +1,7 @@
 import events from './events';
 import {utils} from './common';
 import {axios} from 'axios';
+import sass from './sass/index.scss';
 
 let eventDispatcher = new events.EventBus();
 eventDispatcher.on("test", function (evt, evtData) {
@@ -12,7 +13,7 @@ eventDispatcher.fireEvent(evt, {});
 eventDispatcher.fireEvent(new events.Event("test", {testData : "Test"}), {});
 
 var e1 = new events.Event("Test", {});
-var e2 = utils.clone(e1);
+var e2 = utils.deepClone(e1);
 
 console.log("Are they equal? " + (typeof e1 === typeof e2));
 console.log(e2 instanceof events.Event);
